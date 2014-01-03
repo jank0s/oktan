@@ -6,6 +6,7 @@ Oktan::Application.routes.draw do
   get "car/register"
   get "car/profile"
   get "car/make"
+  get "car/model"
   get "home/index"
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

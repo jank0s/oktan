@@ -57,7 +57,7 @@ $(document).ready(function(){
 	});
 
 	$("#make").change(function(){
-		url="data/model/"+$("#make").val();
+		url="car/model?id="+$("#make").val();
 		$.getJSON(url,
 			function(json){
 				$("#model").empty();

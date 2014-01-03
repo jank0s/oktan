@@ -9,4 +9,9 @@ class CarController < ApplicationController
   	@makes=Make.all
   	render json: @makes
   end
+
+  def model
+  	@models=Model.where(make_id: params[:id])
+  	render json: @models
+  end
 end
