@@ -56,7 +56,7 @@ $(document).on('ready page:load', function (){
 	});
 
 	$("#make").change(function(){
-		url="car/model?id="+$("#make").val();
+		url="/car/model?id="+$("#make").val();
 		$.getJSON(url,
 			function(json){
 				$("#model").empty();
