@@ -21,10 +21,9 @@ $(function() {
  });
 
 var data;
-$(document).ready(function(){
+$(document).on('ready page:load', function (){
 	//general
-	
-	$("tr").click(function(){
+	$("tr, li").click(function(){
 		link=$(this).find("a").attr("href");
 		if(link){
 			window.location = link;
