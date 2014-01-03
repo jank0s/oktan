@@ -22,25 +22,18 @@ $(function() {
 
 var data;
 $(document).ready(function(){
-	//register
-	$("#regForm").validate({
-		messages: {
-			email: {
-				required: "Zahtevano geslo",
-				email: "Email naslov ni veljaven"
-			},
-			password: {
-				required: "Zahtevano geslo",
-				minlength: "Geslo je prekratko"
-			},
-			passwordA: {
-				required: "Ponovno vnesite geslo",
-				minlength: "Geslo je prekratko",
-				equalTo: "Gesli se ne ujemata"
-			}
+	//general
+	
+	$("tr").click(function(){
+		link=$(this).find("a").attr("href");
+		if(link){
+			window.location = link;
 		}
 	});
 
+
+	//register
+	
 
 	//search related js
 	set=0;
