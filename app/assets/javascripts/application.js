@@ -38,7 +38,7 @@ $(document).ready(function(){
 	//search related js
 	set=0;
 	$("#make").ready(function(){
-		$.getJSON("data/make",
+		$.getJSON("/car/make",
 			function(json){
 				for(i=0;i<json.length;i++){
 					$("#make").append($('<option>', {
