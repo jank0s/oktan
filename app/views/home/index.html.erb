@@ -1,2 +1,123 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+			<div id="content">
+				<section>
+					<article>
+						<h2 id="headOktan">Oktan</h2>
+						<p id="parOktan">
+							Oktan je spletna aplikacija za beleženje in analizo porabe vašega jeklenega konjička. Brezplačna registracija Vam omogoča uporabo vseh funkcij vključno s kalkulatorjem stroškov na poljubno dolgi poti glede na Vašo dosedanjo porabo.
+						</p>
+					</article>
+				</section>
+				
+				<section>
+					<div id="search">
+						<h2 id="headQuickSearch">Hitro iskanje</h2>
+						<form action = "search.html">
+							<p>
+								<label>
+									<span id="labelMake">Znamka:</span>
+									<select id = "make" name = "makeID">
+									</select>
+								</label>
+							</p>
+							<p>
+								<label>
+									<span id="labelModel">Model:</span>
+									<select id = "model" name = "modelID">
+									</select>
+								</label>
+							</p>
+							<p class="buttons">
+								<button type = "submit" id="btnSearch">Išči </button>
+								<button type = "reset" id="btnClear">Razveljavi</button>
+							</p>   
+						</form>
+					</div>
+					<div id="loginf">
+						<h2 id="headLogin">Prijava</h2>
+						<form id="loginForm" method = "get" action = "user.html">
+							<p>
+								<label>
+									<span id="labelMail">Email:</span>
+									<input id="mailF" name="mailF" type = "email" placeholder = "ime@domena.si" required />
+								</label>
+							</p>
+							<p>
+								<label>
+									<span id="labelPass">Geslo:</span>
+									<input id="passF" name="passF" type = "password" placeholder = "geslo" minlength="8" required  />
+								</label>
+							</p>
+							<p class="buttons">
+								<button type = "submit" id="btnLogin">Prijava</button>
+							</p>   
+						</form>
+					</div>
+					<div class="clear"></div>
+				</section>
+				
+				<section>
+					<h2 id="headHOF">Lestvica najbolj varčnih</h2>
+					<div class="section-content">
+						<table>
+							<thead>
+								<tr>
+									<th id="thMake">Znamka</th>
+									<th id="thModel">Model</th>
+									<th id="thYear">Letnik</th>
+									<th id="thPower">Moč</th>
+									<th id="thFuel">Gorivo</th>
+									<th>Ø</th>
+									<th id="thUser">Uporabnik</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="car.html">BMW</a></td>
+									<td>Serija 3</td>
+									<td>2013</td>
+									<td>225 kW</td>
+									<td>Bencin</td>
+									<td class="align-right">7,65 l/100km</td>
+									<td class="align-right">tilen</td>
+								</tr>
+								<tr>
+									<td><a href="car.html">BMW</a></td>
+									<td>Serija 3</td>
+									<td>2007</td>
+									<td>225 kW</td>
+									<td>Bencin</td>
+									<td class="align-right">8,42 l/100km</td>
+									<td class="align-right">unknown</td>
+								</tr>
+								<tr>
+									<td><a href="car.html">BMW</a></td>
+									<td>Serija 3</td>
+									<td>2012</td>
+									<td>225 kW</td>
+									<td>Bencin</td>
+									<td class="align-right">9,84 l/100km</td>
+									<td class="align-right">slon</td>
+								</tr>
+								<tr>
+									<td><a href="car.html">BMW</a></td>
+									<td>Serija 3</td>
+									<td>2011</td>
+									<td>225 kW</td>
+									<td>Bencin</td>
+									<td class="align-right">10,23 l/100km</td>
+									<td class="align-right">kamelca</td>
+								</tr>
+								<tr>
+									<td><a href="car.html">BMW</a></td>
+									<td>Serija 3</td>
+									<td>2009</td>
+									<td>225 kW</td>
+									<td>Bencin</td>
+									<td class="align-right">10,44 l/100km</td>
+									<td class="align-right">andy</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
