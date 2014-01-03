@@ -1,2 +1,195 @@
-<h1>Car#info</h1>
-<p>Find me in app/views/car/info.html.erb</p>
+<div id="content">
+	<nav id="nav-ver">
+		<ul class="nav-ver">
+			<li id="entBtn">Pregled</li>
+			<li id="newEntBtn">Vpis porabe</li>
+			<li id="tlBtn">Časovnica</li>
+			<li id="calcBtn">Kalkulator</li>
+		</ul>
+	</nav>
+	
+	<section id="carInfo" class="right">
+		<h2>BMW Serija 3 (2011)</h2>
+		<div class="section-content">
+			<img id="avatar" src="images/avatar.jpg" alt="avatar" />
+			<table id="caravg">
+				<tr>
+					<td>Minimalna poraba</td>
+					<td class="align-right">8,65 l/100km</td>
+				</tr>
+				<tr>
+					<td>Povprečna poraba</td>
+					<td class="align-right">16,14 l/100km</td>
+				</tr>
+				<tr>
+					<td>Maksimalna poraba</td>
+					<td class="align-right">25,23 l/100km</td>
+				</tr>
+				<tr>
+					<td>Strošek goriva</td>
+					<td class="align-right">29,69 €/100km</td>
+				</tr>
+			</table>
+		</div>	
+		<div class="clear"></div>
+	</section>
+	
+	<div id="ent" class="hide">
+		<section class="right">
+			<h3>Vpisi</h3>
+			<div id="entries">
+				<table>
+					<thead>
+						<tr>
+							<th>Datum</th>
+							<th>Kilometri</th>
+							<th>Prevoženo</th>
+							<th>Litri</th>
+							<th>Znesek</th>
+							<th>Ø</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="align-left">27.10.2013</td>
+							<td>66801 km</td>
+							<td>284 km</td>
+							<td>58,54 l</td>
+							<td>87,81 €</td>
+							<td class="align-right">20,61 l/100km</td>
+						</tr>
+						<tr>
+							<td class="align-left">24.10.2013</td>
+							<td>66801 km</td>
+							<td>307 km</td>
+							<td>59,22 l</td>
+							<td>88,83 €</td>
+							<td class="align-right">19,29 l/100km</td>
+						</tr>
+						<tr>
+							<td class="align-left">10.10.2013</td>
+							<td>66494 km</td>
+							<td>237 km</td>
+							<td>59,79 l</td>
+							<td>89,69 €</td>
+							<td class="align-right">25,23 l/100km</td>
+						</tr>
+						<tr>
+							<td class="align-left">30.09.2013</td>
+							<td>66257 km</td>
+							<td>450 km</td>
+							<td>38,93 l</td>
+							<td>58,12 €</td>
+							<td class="align-right">8,65 l/100km</td>
+						</tr>
+						<tr>
+							<td class="align-left">16.09.2013</td>
+							<td>65807 km</td>
+							<td>423 km</td>
+							<td>58,14 l</td>
+							<td>86,80 €</td>
+							<td class="align-right">13,74 l/100km</td>
+						</tr>
+						<tr>
+							<td class="align-left">02.09.2013</td>
+							<td>65384 km</td>
+							<td></td>
+							<td>63,00 l</td>
+							<td>94,06 €</td>
+							<td class="align-right">prvi vpis</td>
+						</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+					   <th>Skupaj</th>
+					   <th></th>
+					   <th>1701 km</th>
+					   <th>274,62 l</th>
+					   <th>505,31 €</th>
+					   <th class="align-right">16,14 l/100km</th>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+		</section>
+
+		<section class="right">
+			<h3>Komentarji</h3>
+			<div id="comment">
+				<form method = "post" action = "car.html">
+					<textarea></textarea>
+					<p class="buttons">
+						<input type = "submit" value = "Oddaj" />
+					</p>
+				</form>
+			</div>
+			<div class="clear"></div>
+			
+			<div id="comments">
+				<p>kamelca: Kako za vraga pa ti voziš, da imaš tako porabo!</p>
+			</div>
+		</section>
+	</div>
+	
+	<div id="newEnt" class="hide">
+		<section class="right">
+			<h3>Nov vpis</h3>
+			<div class="input">
+				<form method = "post" action = "car.html">
+					<p>
+						<label>
+							Datum:
+							<input type="text" id="datepicker" /> 
+						</label>
+					</p>
+					<p>
+						<label>
+							Kilometri:
+							<input required />
+						</label>
+					</p>
+					<p>
+						<label>
+							Litri:
+							<input required />
+						</label>
+					</p>
+					<p>
+						<label>
+							Znesek:
+							<input required />
+						</label>
+					</p>
+					<p class="buttons">
+						<input type = "submit" value = "Vpiši" />
+					</p>   
+				</form>
+				<div class="clear"></div>
+			</div>
+		</section>
+	</div>
+
+	<div id="tl" class="hide">
+		<section class="right">
+			<h3>Časovnica</h3>
+			<canvas id="myChart" height="400" width="700"></canvas>
+		</section>
+	</div>
+
+	<div id="calc" class="hide" >
+		<section class="right">
+			<h3>Kalkulator storškov</h3>
+			<form method = "post" action = "carCalc.html">
+				<p>
+					<label>
+						Vnesite dolžino željene poti: 
+						<input value = "700" /> km
+					</label>
+					<input type = "submit" value = "Izračunaj" />
+				</p>
+			</form>
+			<div class="clear"></div>
+			<p>Glede na Vašo dosedanjo porabo 16,14 l/100km bodo predvideni stroški goriva 700km dolge poti 207,83€</p>
+		</section>
+	</div>
+</div>

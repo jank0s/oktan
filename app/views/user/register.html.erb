@@ -1,2 +1,35 @@
-<h1>User#register</h1>
-<p>Find me in app/views/user/register.html.erb</p>
+<div id="content">
+	<section>
+		<h2>Registracija novega uporabnika</h2>
+		<p>
+			Na tej strani se lahko brezplačno registrirate za uporabo naprednih funkcij spletne aplikacije Oktan.
+		</p>
+	</section>
+	
+	<section>
+		<h3>Podatki o uporabniku</h3>
+		<div>
+			<form id="regForm" method = "post" action = "user.html">
+				<p>
+					<label for="email" class="desc">Email:</label>
+					<input id="email" name="email" type = "email" placeholder = "ime@domena.si" required />
+					<label for="email" class="error">								
+				</p>
+				<p>
+					<label for="password" class="desc">Geslo:</label>
+					<input id="password" name="password" type = "password" placeholder = "geslo" minlength="8" required  />
+					<label for="password" class="error"></label>
+				</p>
+				<p>
+					<label for="passwordA" class="desc">Ponovni vnos gesla:</label>
+					<input id="passwordA" name="passwordA" type = "password" placeholder = "geslo" minlength="8"  equalTo="#password" required  />
+					<label for="passwordA" class="error"></label>
+				</p>
+				<p class="buttons">
+					<input type = "submit" value = "Registracija" />
+				</p>   
+			</form>
+		</div>
+		<div class="clear"></div>
+	</section>
+</div>

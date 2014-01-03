@@ -1,2 +1,188 @@
-<h1>Car#search</h1>
-<p>Find me in app/views/car/search.html.erb</p>
+<div id="content">
+	<nav class="nav-ver">
+		<form method = "post" action = "search.html">
+			<p>
+				<label>
+					Znamka:
+					<select id = "make">
+					</select>
+				</label>
+			</p>
+			<p>
+				<label>
+					Model:
+					<select id = "model">
+					 </select>
+				</label>
+			</p>
+			<p>
+				<label>
+					Gorivo:
+					<select id = "fuel">
+						<option value = "1">Bencin</option>
+						<option value = "2">Diesel</option>
+						<option value = "3">Avtoplin</option>
+					 </select>
+				</label>
+			</p>
+			<p>
+				<label>
+					Letnik
+					<br/>
+					od:
+					<input type = "number" placeholder = "2013"/>
+				</label>
+				<label>
+					do: 
+					<input type = "number" placeholder = "2013"/>
+				</label>
+			</p>
+			<p>
+				<label>
+					Moč [kW]
+					<br/>
+					od:
+					<input type = "number" placeholder = "100"/>
+				</label>
+				<label>
+					do: 
+					<input type = "number" placeholder = "150"/>
+				</label>
+			</p>		
+		</form>
+	</nav>
+	
+	<section class="right">
+		<article>
+			<h2>Rezultati iskanja</h2>
+			<table>
+				<tr>
+					<td>Število vozil</td>
+					<td class="align-right">10</td>
+				</tr>
+				<tr>
+					<td>Minimalna poraba</td>
+					<td class="align-right">7,65 l/100km</td>
+				</tr>
+				<tr>
+					<td>Povprečna poraba</td>
+					<td class="align-right">11,68 l/100km</td>
+				</tr>
+				<tr>
+					<td>Maksimalna poraba</td>
+					<td class="align-right">16,14 l/100km</td>
+				</tr>
+			</table>
+		</article>
+	</section>
+	
+	<section class="right">
+		<article>
+			<table>
+				<thead>
+					<tr>
+						<th>Znamka</th>
+						<th>Model</th>
+						<th>Letnik</th>
+						<th>Moč</th>
+						<th>Gorivo</th>
+						<th>Ø</th>
+						<th>Uporabnik</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2011</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">16,14 l/100km</td>
+						<td class="align-right">jnovak</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2008</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right"> 15,23 l/100km</td>
+						<td class="align-right">marjan</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2007</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">14,70 l/100km</td>
+						<td class="align-right">lojz</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2012</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">12,83 l/100km</td>
+						<td class="align-right">kristi</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2009</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">11,33 l/100km</td>
+						<td class="align-right">dule</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2009</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">10,44 l/100km</td>
+						<td class="align-right">andy</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2011</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">10,23 l/100km</td>
+						<td class="align-right">kamelca</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2012</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">9,84 l/100km</td>
+						<td class="align-right">slon</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2007</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">8,42 l/100km</td>
+						<td class="align-right">unknown</td>
+					</tr>
+					<tr>
+						<td><a href="car.html">BMW</a></td>
+						<td>Serija 3</td>
+						<td>2013</td>
+						<td>225 kW</td>
+						<td>Bencin</td>
+						<td class="align-right">7,65 l/100km</td>
+						<td class="align-right">tilen</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+	</section>
+</div>

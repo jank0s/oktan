@@ -1,2 +1,127 @@
-<h1>User#profile</h1>
-<p>Find me in app/views/user/profile.html.erb</p>
+<div id="content">
+	<nav id="nav-ver">
+		<ul class="nav-ver">
+			<li id="myListBtn">Pregled</li>
+			<li id="newCBtn">Dodaj vozilo</li>
+			<li id="editPBtn">Uredi profil</li>
+		</ul>
+	</nav>
+	
+	<section class="right">
+		<h2>Demo Uporabnik</h2>
+	</section>
+	
+	<div id="myList" class="hide">
+		<section class="right">
+			<h3>Seznam vozil</h3>
+			<div class="section-content">
+				<table>
+					<thead>
+						<tr>
+							<th>Znamka</th>
+							<th>Model</th>
+							<th>Letnik</th>
+							<th>Moč</th>
+							<th>Gorivo</th>
+							<th>Ø</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="car.html">BMW</a></td>
+							<td>Serija 3</td>
+							<td>2011</td>
+							<td>225 kW</td>
+							<td>Bencin</td>
+							<td class="align-right">16,14 l/100km</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+
+	<div id="newC" class="hide">
+		<section class="right">
+			<h2>Dodaj vozilo</h2>
+		</section>
+		
+		<section class="right">
+			<h3>Podatki o vozilu</h3>
+			<div class="input">
+				<form method = "post" action = "search.html">
+					<p>
+						<label>
+							Znamka:
+							<select id = "make">
+							</select>
+						</label>
+					</p>
+					<p>
+						<label>
+							Model:
+							<select id = "model">
+							</select>
+						</label>
+					</p>
+					<p>
+						<label>
+							Gorivo:
+							<select id = "fuel">
+								<option value = "1">Bencin</option>
+								<option value = "2">Diesel</option>
+								<option value = "3">Avtoplin</option>
+							 </select>
+						</label>
+					</p>
+					<p>
+						<label>
+							Letnik:
+							<input id="my" type = "number" placeholder = "2013"/>
+						</label>
+					</p>
+					<p>
+						<label>
+							Moč [kW]:
+							<input type = "number" placeholder = "100"/>
+						</label>
+					</p>
+					<p class="buttons">
+						<input type = "reset" value = "Dodaj" />
+					</p>			
+				</form>
+			</div>
+			<div class="clear"></div>
+		</section>
+	</div>
+
+	<div id="editP" class="hide">
+		<section class="right">
+			<h2>Uredi profil</h2>
+		</section>
+		
+		<section class="right">
+			<h3>Podatki o uporabniku</h3>
+			<div class="input">
+				<form method = "post" action = "user.html">
+					<p>
+						<label>
+							Email:
+							<input type = "email" value = "demo@k0s.si" required />
+						</label>
+					</p>
+					<p>
+						<label>
+							Geslo:
+							<input type = "password" placeholder = "geslo" required />
+						</label>
+					</p>
+					<p class="buttons">
+						<input type = "submit" value = "Potrdi" />
+					</p>   
+				</form>
+			</div>
+			<div class="clear"></div>
+		</section>
+	</div>
+</div>
