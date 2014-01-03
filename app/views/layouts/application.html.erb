@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oktan</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+	<title>Oktan - spletna aplikacija za beleženje in analizo porabe</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+<head>
 <body>
-<h1>Header</h1>
-<%= yield %>
-
+	<div class="container">
+		<header>
+			<div class="inner">
+				<div class="logo" title="Oktan"></div>
+				<div id="login">
+					<a href="index.xhtml" id="miLogin">Prijava</a> | <a href="register.xhtml" id="miRegister">Registracija</a>
+				</div>
+			</div>
+		</header>
+		<nav id="nav-bar">
+			<div class="inner">
+				<ul class="nav-bar">
+					<li><a href="index.xhtml" id="miHome">Domov</a></li>
+					<li><a href="search.xhtml" id="miSearch">Iskanje</a></li>
+					<li><a href = "user.xhtml">Moj profil</a></li>
+				</ul>
+				<ul class="lang-bar">
+				</ul>
+			</div>
+		</nav>
+		<div id="content">
+			<%= yield %>
+		</div>
+		<footer>
+			<div class="inner">Developed by JK</div>
+		</footer>
+	</div>
 </body>
 </html>

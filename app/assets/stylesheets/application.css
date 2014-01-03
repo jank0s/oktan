@@ -11,3 +11,359 @@
  *= require_self
  *= require_tree .
  */
+@charset "utf-8";
+/* CSS Document */
+
+body, div, h1, h2, h3, h4, h5, h6, p, ul, img {
+	margin: 0px;
+	padding: 0px; 
+}
+
+.clear {
+	clear: both;
+}
+
+a:link {
+    color:#000000;
+    text-decoration:none
+}
+a:visited {
+    color:#000000;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #205081;
+}
+
+p {
+	margin-top: 1em;
+}
+
+html, body{
+	font-family: Arial, sans-serif;
+	height: 100%;
+}
+
+.container{
+	min-height: 100%;
+	position: relative;	
+}
+
+.inner{
+	width: 960px;
+	margin: 0 auto;	
+}
+
+header{
+	background: #205081;
+	height: 50px;
+	display: block;
+	padding: 10px;
+}
+
+header a:hover {
+    color: white;
+}
+
+.logo{
+	float: left;
+    width: 203px;
+    height: 50px;
+    background: url('../images/logo.png') no-repeat;
+    display: block;
+}
+
+#login{
+	float: right;
+	padding-top: 15px;
+}
+
+input, textarea, select{
+	font-family: inherit;
+}
+
+
+/* Navigation bar */
+#nav-bar{
+	height: 36px;
+	border-bottom: 1px solid #ccc;
+	background-color: #f5f5f5;
+	padding: 0;
+}
+
+.nav-bar{
+	float: left;
+	list-style: none;
+}
+
+.nav-bar li{
+	float: left;
+	padding: 9px 10px;
+	cursor: pointer;
+}
+
+.nav-bar li:hover{
+	background-color: #E6E6E6;
+}
+
+/*Lang bar*/
+.lang-bar{
+	float: right;
+	list-style: none;
+}
+
+.lang-bar li{
+	float: left;
+	padding: 9px 10px;
+	cursor: pointer;
+}
+
+.lang-bar li:hover{
+	background-color: #E6E6E6;
+}
+
+/*Vertical nav*/
+.nav-ver{
+	position: absolute;
+	width: 180px;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	background-color: #f5f5f5;
+	padding: 10px;
+}
+
+.nav-ver{
+	float: left;
+	list-style: none;
+}
+
+.nav-ver li{
+	position: relative;
+	left: -10px;
+	padding: 9px 10px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.nav-ver li:hover{
+	background-color: #E6E6E6;
+}
+
+.nav-ver label select {
+	width: 180px;
+}
+
+.nav-ver  label input{
+	width: 47px;
+	
+}
+
+/*Content*/
+#content{
+	width: 960px;
+	margin: 0px auto;
+	padding-bottom: 90px;
+}
+
+section{
+	width: 928px;
+	margin: 20px auto;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	padding: 15px;
+	text-align:justify;
+}
+
+.right{
+	margin-left: 212px;
+	width: 716px;
+}
+
+.section-content{
+	margin-top: 15px;
+}
+
+/*index*/
+#search{
+	position: absolute;
+	width: 454px;
+	padding-right: 10px;
+	border-right: 1px solid #ccc;
+}
+
+#loginf{
+	width: 454px;
+	margin-left: 464px;
+	border-left: 1px solid #ccc;
+	padding-left: 10px;
+}
+
+#errorMsg{
+	color: #FF0000;
+}
+#errorMsg label{
+	display: block;
+}
+
+form p{
+	margin-bottom: 1em;
+}
+
+
+#search form, #loginf form{
+	margin-top: 2em;
+}
+
+#search label select, #loginf label input{
+	width: 330px;
+	float: right;
+}
+
+/*forms*/
+.buttons{
+	float: right;
+}
+
+.input{
+	width: 450px;
+}
+
+.input label input{
+	width: 300px;
+	float: right;
+}
+
+.input label select{
+	width: 306px;
+	float: right;
+}
+
+.input .buttons{
+	float: left;
+}
+
+/*registration form*/
+form label.desc{
+	width: 160px;
+	display: inline-block;
+}
+
+#regForm input{
+	width: 200px;
+}
+
+#regForm .buttons{
+	float: left;
+}
+
+#regForm .buttons input{
+	width: auto;
+}
+
+label.error{
+	color: #FF0000;
+	border-color: #FF0000;
+}
+
+input.error{
+	border-color: #FF0000;
+}
+
+/*car info*/
+section table {
+    width:100%;
+    border-collapse: collapse;
+	margin: 10px;
+}
+
+
+section table thead th{
+    padding: 5px 0;
+    background-color: #f5f5f5;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+section table tbody td{
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+section table .align-right{
+    text-align: right;
+}
+
+section table .align-left{
+    text-align: left;
+}
+
+section table tbody tr:hover{
+    background-color: #E6E6E6;
+}
+
+.hide{
+	display: none;
+}
+
+#ent, #myList{
+	display: block;
+}
+
+
+#avatar{
+	float: left;
+}
+
+#caravg{
+	float: right;
+	width: 400px;
+}
+
+#entries table{
+	text-align: center;
+}
+
+#entries table tfoot{
+	border-top: 2px solid #808080;
+}
+
+#comment textarea{
+	width: 670px;
+	height: 60px;
+	resize: none;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	padding: 10px;
+	margin: 20px 10px 0px 10px;
+}
+
+#comment .buttons{
+	margin-right: 20px;
+}
+
+#comments{
+	width: 670px;
+	padding: 10px;
+	margin: 0px 10px 0px 10px;
+}
+
+#timeline{
+	margin: 20px;
+}
+
+
+/*Footer*/
+#footer{
+    padding: 2em;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	border-top: 1px solid #ccc;
+	background-color: #808080;
+	padding-top: 20px;
+	text-align: center;
+}
