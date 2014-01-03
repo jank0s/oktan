@@ -1,4 +1,10 @@
 Oktan::Application.routes.draw do
+  get "user/register"
+  get "user/profile"
+  get "car/info"
+  get "car/search"
+  get "car/register"
+  get "car/profile"
   get "home/index"
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
