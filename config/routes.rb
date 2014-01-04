@@ -4,12 +4,9 @@ Oktan::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
   get "user/register"
   get "user/profile"
-  get "car/info"
-  get "car/search"
-  get "car/register"
-  get "car/profile"
-  get "car/make"
-  get "car/model"
+  get "cars/search"
+  get "cars/makes"
+  get "cars/model"
   get "home/index"
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

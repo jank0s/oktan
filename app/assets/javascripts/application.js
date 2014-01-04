@@ -37,7 +37,7 @@ $(document).on('ready page:load', function (){
 	//search related js
 	set=0;
 	$("#make").ready(function(){
-		$.getJSON("/car/make",
+		$.getJSON("/cars/makes",
 			function(json){
 				for(i=0;i<json.length;i++){
 					$("#make").append($('<option>', {
@@ -58,7 +58,7 @@ $(document).on('ready page:load', function (){
 	});
 
 	$("#make").change(function(){
-		url="/car/model?id="+$("#make").val();
+		url="/cars/model?id="+$("#make").val();
 		$.getJSON(url,
 			function(json){
 				$("#model").empty();

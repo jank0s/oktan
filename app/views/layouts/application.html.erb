@@ -23,8 +23,8 @@
 		<nav id="nav-bar">
 			<div class="inner">
 				<ul class="nav-bar">
-					<li><a href="/" id="miHome">Domov</a></li>
-					<li><a href="/car/search" id="miSearch">Iskanje</a></li>
+					<li><%= link_to "Domov", root_path %></li>
+					<li><%= link_to "Iskanje", cars_search_path %></li>
 					<% if signed_in? %>
 						<li><%= link_to "Moj profil", current_user %></li>
 					<% end %>
