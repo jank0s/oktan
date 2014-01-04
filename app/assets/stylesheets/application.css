@@ -270,6 +270,7 @@ form p{
 #errorDiv{
 	margin-left: 450px;
 	height: 200px;
+	color: red;
 }
 
 #error_explanation ul {
