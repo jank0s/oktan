@@ -9,4 +9,7 @@ class Car < ActiveRecord::Base
 	validates :year, presence: true
 	validates :power, presence: true
 	validates :fuel_type_id, presence: true
+
+	def avg
+		return (self.entries.sum('quantity')-self.entries.order(:date).first.quantity)/(self.entries.maximum('odo')-self.entries.minimum('odo'))*100	end
 end
