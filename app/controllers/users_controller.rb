@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-	def show
+    before_action :signed_in_user, only: [:show]
+
+    def show
     	@user = User.find(params[:id])
   	end
 
@@ -18,8 +20,12 @@ class UsersController < ApplicationController
   	end
 
   	private
+      def user_params
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+      def signed_in_user
+        @user = User.find(params[:id])
+        redirect_to root_url unless signed_in? &&  current_user?(@user)
+      end
 end
