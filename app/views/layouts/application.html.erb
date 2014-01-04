@@ -12,7 +12,11 @@
 			<div class="inner">
 				<div class="logo" title="Oktan"><%= image_tag("logo.png", alt: "logo") %></div>
 				<div id="login">
-					<a href="/" id="miLogin">Prijava</a> | <a href="/users/new" id="miRegister">Registracija</a>
+					<% if signed_in? %>
+						<%= current_user.email %> | <%= link_to "Odjava", signout_path, method: "delete" %>
+					<% else %>
+						<a href="/" id="miLogin">Prijava</a> | <a href="/users/new" id="miRegister">Registracija</a>
+					<% end %>
 				</div>
 			</div>
 		</header>
@@ -21,7 +25,9 @@
 				<ul class="nav-bar">
 					<li><a href="/" id="miHome">Domov</a></li>
 					<li><a href="/car/search" id="miSearch">Iskanje</a></li>
-					<li><a href = "/user/profile">Moj profil</a></li>
+					<% if signed_in? %>
+						<li><%= link_to "Moj profil", current_user %></li>
+					<% end %>
 				</ul>
 				<ul class="lang-bar">
 				</ul>

@@ -34,23 +34,24 @@
 		</div>
 		<div id="loginf">
 			<h2 id="headLogin">Prijava</h2>
-			<form id="loginForm" method = "get" action = "user.html">
+			<%= form_for(:session, url: sessions_path) do |f| %>
 				<p>
 					<label>
-						<span id="labelMail">Email:</span>
-						<input id="mailF" name="mailF" type = "email" placeholder = "ime@domena.si" required />
-					</label>
+				    <%= f.label :email, "Email:" %>
+				    <%= f.text_field :email, placeholder: "ime@domena.si" %>
+				    </label>
 				</p>
+
 				<p>
 					<label>
-						<span id="labelPass">Geslo:</span>
-						<input id="passF" name="passF" type = "password" placeholder = "geslo" minlength="8" required  />
+					    <%= f.label :password, "Geslo:" %>
+					    <%= f.password_field :password, placeholder: "geslo" %>
 					</label>
 				</p>
-				<p class="buttons">
-					<button type = "submit" id="btnLogin">Prijava</button>
-				</p>   
-			</form>
+		      	<p class="buttons">
+		      		<%= f.submit "Prijava", class: "btn btn-large btn-primary" %>
+		      	</p>
+		    <% end %>
 		</div>
 		<div class="clear"></div>
 	</section>

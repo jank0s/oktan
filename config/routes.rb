@@ -1,5 +1,7 @@
 Oktan::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signout', to: 'sessions#destroy', via: 'delete'
   get "user/register"
   get "user/profile"
   get "car/info"
