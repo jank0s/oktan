@@ -33,25 +33,46 @@
 			</form>
 		</div>
 		<div id="loginf">
-			<h2 id="headLogin">Prijava</h2>
-			<%= form_for(:session, url: sessions_path) do |f| %>
+			<% if signed_in? %>
+				<h2>Prijavljen</h2>
 				<p>
-					<label>
-				    <%= f.label :email, "Email:" %>
-				    <%= f.text_field :email, placeholder: "ime@domena.si" %>
-				    </label>
+					<label><%= current_user.email %></label>
 				</p>
+				<br/>
+				<table>
+					<thead>
+						<tr>
+							<th>Znamka</th>
+							<th>Model</th>
+							<th>Letnik</th>
+							<th>Moč</th>
+							<th>Gorivo</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			<% else %>
+				<h2 id="headLogin">Prijava</h2>
+				<%= form_for(:session, url: sessions_path) do |f| %>
+					<p>
+						<label>
+					    <%= f.label :email, "Email:" %>
+					    <%= f.text_field :email, placeholder: "ime@domena.si" %>
+					    </label>
+					</p>
 
-				<p>
-					<label>
-					    <%= f.label :password, "Geslo:" %>
-					    <%= f.password_field :password, placeholder: "geslo" %>
-					</label>
-				</p>
-		      	<p class="buttons">
-		      		<%= f.submit "Prijava", class: "btn btn-large btn-primary" %>
-		      	</p>
-		    <% end %>
+					<p>
+						<label>
+						    <%= f.label :password, "Geslo:" %>
+						    <%= f.password_field :password, placeholder: "geslo" %>
+						</label>
+					</p>
+			      	<p class="buttons">
+			      		<%= f.submit "Prijava", class: "btn btn-large btn-primary" %>
+			      	</p>
+			    <% end %>
+			<% end %>
 		</div>
 		<div class="clear"></div>
 	</section>

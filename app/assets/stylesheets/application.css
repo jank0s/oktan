@@ -196,6 +196,7 @@ section{
 	margin-left: 464px;
 	border-left: 1px solid #ccc;
 	padding-left: 10px;
+	min-height: 182px;
 }
 
 #errorMsg{
