@@ -1,4 +1,5 @@
 Oktan::Application.routes.draw do
+  resources :users
   get "user/register"
   get "user/profile"
   get "car/info"

@@ -1,0 +1,35 @@
+<div id="content">
+	<section>
+		<h2>Registracija novega uporabnika</h2>
+		<p>
+			Na tej strani se lahko brezplačno registrirate za uporabo naprednih funkcij spletne aplikacije Oktan.
+		</p>
+	</section>
+	
+	<section>
+		<h3>Podatki o uporabniku</h3>
+		<div id="regForm">
+			<%= form_for @user do |f| %>
+				<p>
+					<%= f.label :email, "Email:" %>
+	     			<%= f.text_field :email %>
+	     		</p>
+	     		<p>
+     				<%= f.label :password, "Geslo:" %>
+    				<%= f.password_field :password %>
+    			</p>
+    			<p>
+      				<%= f.label :password_confirmation, "Ponovni vnos gesla:" %>
+      				<%= f.password_field :password_confirmation %>
+      			</p>
+      			<p class="buttons">
+      			<%= f.submit "Registracija" %>
+      			</p>
+			<% end %>
+		</div>
+		<div id="errorDiv">
+			<%= render 'shared/error_messages' %>
+		</div>
+				<div class="clear"></div>
+	</section>
+</div>
