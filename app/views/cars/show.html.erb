@@ -2,14 +2,16 @@
 	<nav id="nav-ver">
 		<ul class="nav-ver">
 			<li id="entBtn">Pregled</li>
-			<li id="newEntBtn">Vpis porabe</li>
+			<% if @isOwner %>
+				<li id="newEntBtn">Vpis porabe</li>
+			<% end %>
 			<li id="tlBtn">Časovnica</li>
 			<li id="calcBtn">Kalkulator</li>
 		</ul>
 	</nav>
 	
 	<section id="carInfo" class="right">
-		<h2>BMW Serija 3 (2011)</h2>
+		<h2><%= @carHead %></h2>
 		<div class="section-content">
 			<img id="avatar" src="images/avatar.jpg" alt="avatar" />
 			<table id="caravg">
@@ -131,43 +133,47 @@
 		</section>
 	</div>
 	
-	<div id="newEnt" class="hide">
-		<section class="right">
-			<h3>Nov vpis</h3>
-			<div class="input">
-				<form method = "post" action = "car.html">
-					<p>
-						<label>
-							Datum:
-							<input type="text" id="datepicker" /> 
-						</label>
-					</p>
-					<p>
-						<label>
-							Kilometri:
-							<input required />
-						</label>
-					</p>
-					<p>
-						<label>
-							Litri:
-							<input required />
-						</label>
-					</p>
-					<p>
-						<label>
-							Znesek:
-							<input required />
-						</label>
-					</p>
-					<p class="buttons">
-						<input type = "submit" value = "Vpiši" />
-					</p>   
-				</form>
-				<div class="clear"></div>
-			</div>
-		</section>
-	</div>
+	<% if @isOwner %>
+		<div id="newEnt" class="hide">
+			<section class="right">
+				<h3>Nov vpis</h3>
+				<div class="input">
+					<%= form_for @newEntry do |f| %>
+						<p>
+							<label>
+								<%= f.label :date, "Datum:" %>
+								<%= f.text_field :date, id: "datepicker" %>
+							</label>
+						</p>
+						<p>
+							<label>
+								<%= f.label :odo, "Kilometri:" %>
+								<%= f.text_field :odo %>
+							</label>
+						</p>
+						<p>
+							<label>
+								<%= f.label :quantity, "Litri:" %>
+								<%= f.text_field :quantity %>
+							</label>
+						</p>
+						<p>
+							<label>
+								<%= f.label :price, "Znesek:" %>
+								<%= f.text_field :price %>
+							</label>
+						</p>
+						<%= f.hidden_field :car_id, value: @carID %>
+						<p class="buttons">
+							<%= f.submit "Vpiši" %>
+						</p>   
+					<% end %>
+
+					<div class="clear"></div>
+				</div>
+			</section>
+		</div>
+	<% end %>
 
 	<div id="tl" class="hide">
 		<section class="right">

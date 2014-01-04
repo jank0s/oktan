@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 1
+  date: 2014-01-04
+  odo: 1
+  quantity: 1.5
+  price: 1.5
+
+two:
+  car_id: 1
+  date: 2014-01-04
+  odo: 1
+  quantity: 1.5
+  price: 1.5

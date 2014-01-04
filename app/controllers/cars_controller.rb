@@ -1,5 +1,10 @@
 class CarsController < ApplicationController
 	def show
+		@car=Car.find(params[:id])
+		@carID=@car.id
+		@isOwner=(current_user==@car.user)
+		@carHead=@car.model.make.name+" "+@car.model.name+" ("+@car.year.to_s+")"
+		@newEntry=Entry.new
   	end
 
   	def search
