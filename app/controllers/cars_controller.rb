@@ -1,8 +1,18 @@
 class CarsController < ApplicationController
-	def info
+	def show
   	end
 
   	def search
+  	end
+
+  	def create
+  		@car = Car.new(car_params)
+  		@car.user=current_user
+  		if @car.save
+  			redirect_to @car
+  		else
+  			redirect_to current_user
+  		end
   	end
 
 	def makes
@@ -19,4 +29,9 @@ class CarsController < ApplicationController
   		@fuel_types=FuelType.all
   		render json: @fuel_types
   	end
+
+  	private
+    	def car_params
+        	params.require(:car).permit(:model_id, :year, :power, :fuel_type_id)
+      	end
 end

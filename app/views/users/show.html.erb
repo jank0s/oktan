@@ -49,7 +49,7 @@
 		<section class="right">
 			<h3>Podatki o vozilu</h3>
 			<div class="input">
-				<form method = "post" action = "search.html">
+				<%= form_tag cars_path do %>
 					<p>
 						<label>
 							Znamka:
@@ -60,33 +60,33 @@
 					<p>
 						<label>
 							Model:
-							<select id = "model">
+							<select id = "model" name="car[model_id]">
 							</select>
 						</label>
 					</p>
 					<p>
 						<label>
 							Gorivo:
-							<select id = "fuel">
+							<select id = "fuel" name="car[fuel_type_id]">
 														 </select>
 						</label>
 					</p>
 					<p>
 						<label>
 							Letnik:
-							<input id="my" type = "number" placeholder = "2013"/>
+							<input id="my" type = "number"  name="car[year]" placeholder = "2013"/>
 						</label>
 					</p>
 					<p>
 						<label>
 							Moč [kW]:
-							<input type = "number" placeholder = "100"/>
+							<input type = "number"  name="car[power]" placeholder = "100"/>
 						</label>
 					</p>
 					<p class="buttons">
-						<input type = "reset" value = "Dodaj" />
+						<input type = "submit" value = "Dodaj" />
 					</p>			
-				</form>
+				<% end %>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -103,19 +103,19 @@
 				<%= form_for(@user) do |f| %>
 				    <p>
 						<label>
-						    <%= f.label :email %>
+						    <%= f.label :email, "Email:" %>
 						    <%= f.text_field :email %>
 						</label>
 					</p>
 					<p>
 						<label>
-						    <%= f.label :password %>
+						    <%= f.label :password, "Geslo:" %>
 						    <%= f.password_field :password %>
 				    	</label>
 					</p>
 					<p>
 						<label>
-						    <%= f.label :password_confirmation, "Confirm Password" %>
+						    <%= f.label :password_confirmation, "Ponovni vnos gesla:" %>
 						    <%= f.password_field :password_confirmation %>
 				    	</label>
 					</p>

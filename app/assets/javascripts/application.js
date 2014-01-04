@@ -95,16 +95,16 @@ $(document).on('ready page:load', function (){
 	//car info related js
 	$("#entBtn").click(function(){
 		$(".hide").hide();
-		$("#ent").animate({opacity: "show"}, "slow");
+		$("#ent").show();
 
 	});
 	$("#newEntBtn").click(function(){
 		$(".hide").hide();
-		$("#newEnt").animate({opacity: "show"}, "slow");
+		$("#newEnt").show();
 	});
 	$("#tlBtn").click(function(){
 		$(".hide").hide();
-		$("#tl").animate({opacity: "show"}, "slow");
+		$("#tl").show();
 		$("#myChart").replaceWith('<canvas id="myChart" height="400" width="700"></canvas>');
 		var ctx = $("#myChart").get(0).getContext("2d");
 		$.getJSON("data/car/0/timeline", function(json){
@@ -127,7 +127,7 @@ $(document).on('ready page:load', function (){
 
 	$("#calcBtn").click(function(){
 		$(".hide").hide();
-		$("#calc").animate({opacity: "show"}, "slow");
+		$("#calc").show();
 	});
 
 	$("#datepicker").datepicker();
@@ -136,17 +136,17 @@ $(document).on('ready page:load', function (){
 	//user info related js
 	$("#myListBtn").click(function(){
 		$(".hide").hide();
-		$("#myList").animate({opacity: "show"}, "slow");
+		$("#myList").show();
 
 	});
 	$("#newCBtn").click(function(){
 		$(".hide").hide();
-		$("#newC").animate({opacity: "show"}, "slow");
+		$("#newC").show();
 
 	});
 	$("#editPBtn").click(function(){
 		$(".hide").hide();
-		$("#editP").animate({opacity: "show"}, "slow");
+		$("#editP").show();
 
 	});
 });
