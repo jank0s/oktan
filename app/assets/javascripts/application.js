@@ -76,6 +76,20 @@ $(document).on('ready page:load', function (){
 				}
 			}
 		);
+	});
+
+	$("#fuel").ready(function(){
+		$.getJSON("/cars/ftypes",
+			function(json){
+				for(i=0;i<json.length;i++){
+					$("#fuel").append($('<option>', {
+					    value: json[i].id,
+					    text: json[i].name
+					}));
+				}
+				$("#fuel").val(-1);
+			}
+		);
 	});	
 	
 	//car info related js

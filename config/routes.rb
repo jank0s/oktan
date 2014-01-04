@@ -7,6 +7,7 @@ Oktan::Application.routes.draw do
   get "cars/search"
   get "cars/makes"
   get "cars/model"
+  get "cars/ftypes"
   get "home/index"
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

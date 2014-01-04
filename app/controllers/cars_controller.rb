@@ -13,5 +13,10 @@ class CarsController < ApplicationController
   	def model
   		@models=Model.where(make_id: params[:id])
   		render json: @models
-  end
+  	end
+
+  	def ftypes
+  		@fuel_types=FuelType.all
+  		render json: @fuel_types
+  	end
 end

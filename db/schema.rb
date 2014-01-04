@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104113024) do
+ActiveRecord::Schema.define(version: 20140104131700) do
+
+  create_table "fuel_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "makes", force: true do |t|
     t.string   "name"
