@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :signed_in_user, only: [:show, :update]
 
     def show
+      @list=Car.where(user: current_user)
   	end
 
   	def new

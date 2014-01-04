@@ -50,6 +50,16 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% @list.each do |c| %>
+							<tr>
+								<td><a href="/cars/<%= c.id %>"><%= c.model.make.name %></a></td>
+								<td><%= c.model.name %></td>
+								<td><%= c.year %></td>
+								<td><%= c.power %> kW</td>
+								<td><%= c.fuel_type.name %></td>
+							</tr>
+						<% end %>
+
 					</tbody>
 				</table>
 			<% else %>
@@ -93,51 +103,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><a href="car.html">BMW</a></td>
-						<td>Serija 3</td>
-						<td>2013</td>
-						<td>225 kW</td>
-						<td>Bencin</td>
-						<td class="align-right">7,65 l/100km</td>
-						<td class="align-right">tilen</td>
-					</tr>
-					<tr>
-						<td><a href="car.html">BMW</a></td>
-						<td>Serija 3</td>
-						<td>2007</td>
-						<td>225 kW</td>
-						<td>Bencin</td>
-						<td class="align-right">8,42 l/100km</td>
-						<td class="align-right">unknown</td>
-					</tr>
-					<tr>
-						<td><a href="car.html">BMW</a></td>
-						<td>Serija 3</td>
-						<td>2012</td>
-						<td>225 kW</td>
-						<td>Bencin</td>
-						<td class="align-right">9,84 l/100km</td>
-						<td class="align-right">slon</td>
-					</tr>
-					<tr>
-						<td><a href="car.html">BMW</a></td>
-						<td>Serija 3</td>
-						<td>2011</td>
-						<td>225 kW</td>
-						<td>Bencin</td>
-						<td class="align-right">10,23 l/100km</td>
-						<td class="align-right">kamelca</td>
-					</tr>
-					<tr>
-						<td><a href="car.html">BMW</a></td>
-						<td>Serija 3</td>
-						<td>2009</td>
-						<td>225 kW</td>
-						<td>Bencin</td>
-						<td class="align-right">10,44 l/100km</td>
-						<td class="align-right">andy</td>
-					</tr>
+					<% @top.each do |c| %>
+						<tr>
+							<td><a href="/cars/<%= c.id %>"><%= c.model.make.name %></a></td>
+							<td><%= c.model.name %></td>
+							<td><%= c.year %></td>
+							<td><%= c.power %> kW</td>
+							<td><%= c.fuel_type.name %></td>
+							<td class="align-right"><%= '%.2f' % c.con_avg %> l/100km</td>
+							<td class="align-right"><%= c.user.email %></td>
+						</tr>
+					<% end %>
 				</tbody>
 			</table>
 		</div>

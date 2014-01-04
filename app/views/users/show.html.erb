@@ -27,14 +27,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><a href="car.html">BMW</a></td>
-							<td>Serija 3</td>
-							<td>2011</td>
-							<td>225 kW</td>
-							<td>Bencin</td>
-							<td class="align-right">16,14 l/100km</td>
-						</tr>
+						<% @list.each do |c| %>
+							<tr>
+								<td><a href="/cars/<%= c.id %>"><%= c.model.make.name %></a></td>
+								<td><%= c.model.name %></td>
+								<td><%= c.year %></td>
+								<td><%= c.power %> kW</td>
+								<td><%= c.fuel_type.name %></td>
+								<% if c.con_avg!=nil %>
+									<td class="align-right"><%= '%.2f' % c.con_avg %> l/100km</td>
+								<% else %>
+									<td class="align-right">-</td>
+								<% end %>
+							</tr>
+						<% end %>
 					</tbody>
 				</table>
 			</div>

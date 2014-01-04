@@ -3,8 +3,9 @@ class EntriesController < ApplicationController
 
 	def create
 		@entry = Entry.new(entry_params)
-		
 		if @entry.save
+			@car.con_avg=@car.updateAvg
+			@car.save
   			redirect_to @car
   		else
   			redirect_to @car
