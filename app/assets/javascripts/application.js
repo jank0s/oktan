@@ -50,6 +50,8 @@ $(document).on('ready page:load', function (){
 					$("#make").val(makeID);
 					$("#make").change();
 					set=1;
+				}else{
+					$("#make").val(-1);
 				}
 			}
 		);
