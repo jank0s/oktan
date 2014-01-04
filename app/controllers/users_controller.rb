@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-    before_action :signed_in_user, only: [:show]
+    before_action :signed_in_user, only: [:show, :update]
 
     def show
-    	@user = User.find(params[:id])
   	end
 
   	def new
@@ -18,6 +17,16 @@ class UsersController < ApplicationController
       		render 'new'
     	end
   	end
+
+    def update
+      if @user.update_attributes(user_params)
+        redirect_to @user
+      else
+        @user=current_user
+        render 'show'
+      end
+    end
+
 
   	private
       def user_params

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model_id: 1
+  user_id: 1
+  year: 1
+  power: 1
+  fuel_type_id: 1
+
+two:
+  model_id: 1
+  user_id: 1
+  year: 1
+  power: 1
+  fuel_type_id: 1

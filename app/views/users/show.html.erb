@@ -100,23 +100,30 @@
 		<section class="right">
 			<h3>Podatki o uporabniku</h3>
 			<div class="input">
-				<form method = "post" action = "user.html">
-					<p>
+				<%= form_for(@user) do |f| %>
+				    <p>
 						<label>
-							Email:
-							<input type = "email" value = "demo@k0s.si" required />
+						    <%= f.label :email %>
+						    <%= f.text_field :email %>
 						</label>
 					</p>
 					<p>
 						<label>
-							Geslo:
-							<input type = "password" placeholder = "geslo" required />
-						</label>
+						    <%= f.label :password %>
+						    <%= f.password_field :password %>
+				    	</label>
+					</p>
+					<p>
+						<label>
+						    <%= f.label :password_confirmation, "Confirm Password" %>
+						    <%= f.password_field :password_confirmation %>
+				    	</label>
 					</p>
 					<p class="buttons">
-						<input type = "submit" value = "Potrdi" />
-					</p>   
-				</form>
+					    <%= f.submit "Potrdi" %>
+					    <%= render 'shared/error_messages' %>
+				    </p>
+			    <% end %>
 			</div>
 			<div class="clear"></div>
 		</section>
