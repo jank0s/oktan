@@ -117,25 +117,25 @@
 						<p>
 							<label>
 								<%= f.label :date, "Datum:" %>
-								<%= f.text_field :date, id: "datepicker" %>
+								<%= f.text_field :date, id: "datepicker", placeholder: "01.01.2013" %>
 							</label>
 						</p>
 						<p>
 							<label>
 								<%= f.label :odo, "Kilometri:" %>
-								<%= f.text_field :odo %>
+								<%= f.text_field :odo , placeholder: "130000"%>
 							</label>
 						</p>
 						<p>
 							<label>
 								<%= f.label :quantity, "Litri:" %>
-								<%= f.text_field :quantity %>
+								<%= f.text_field :quantity, placeholder: "60.00" %>
 							</label>
 						</p>
 						<p>
 							<label>
 								<%= f.label :price, "Znesek:" %>
-								<%= f.text_field :price %>
+								<%= f.text_field :price, placeholder: "90.00" %>
 							</label>
 						</p>
 						<%= f.hidden_field :car_id, value: @carID %>
