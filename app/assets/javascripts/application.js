@@ -39,6 +39,7 @@ $(document).on('ready page:load', function (){
 	$("#make").ready(function(){
 		$.getJSON("/cars/makes",
 			function(json){
+				$("#make").append($('<option>', {value: -1, text: ""}));
 				for(i=0;i<json.length;i++){
 					$("#make").append($('<option>', {
 					    value: json[i].id,
@@ -62,18 +63,17 @@ $(document).on('ready page:load', function (){
 		$.getJSON(url,
 			function(json){
 				$("#model").empty();
+				$("#model").append($('<option>', {value: -1, text: ""}));
 				for(i=0;i<json.length;i++){
 					$("#model").append($('<option>', {
 					    value: json[i].id,
 					    text: json[i].name
 					}));
 				}
-				if(set){
-					modelID=$(document).getUrlParam("modelID");
-					$("#model").val(modelID);
-					$("#model").change();
-					set=0;
-				}
+				modelID=(set)? $(document).getUrlParam("modelID"):-1;
+				$("#model").val(modelID);
+				$("#model").change();
+				set=0;
 			}
 		);
 	});
@@ -81,13 +81,19 @@ $(document).on('ready page:load', function (){
 	$("#fuel").ready(function(){
 		$.getJSON("/cars/ftypes",
 			function(json){
+				$("#fuel").append($('<option>', {value: -1, text: ""}));
 				for(i=0;i<json.length;i++){
 					$("#fuel").append($('<option>', {
 					    value: json[i].id,
 					    text: json[i].name
 					}));
 				}
-				$("#fuel").val(-1);
+				fTypeID=$(document).getUrlParam("fTypeID");
+				if(fTypeID!=null){
+					$("#fuel").val(fTypeID);
+				}else{
+					$("#fuel").val(-1);
+				}
 			}
 		);
 	});	

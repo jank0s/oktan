@@ -30,6 +30,43 @@ class CarsController < ApplicationController
   	end
 
   	def search
+  		@yFrom=params[:yFrom]
+  		@yTo=params[:yTo]
+  		@pFrom=params[:pFrom]
+  		@pTo=params[:pTo]
+
+  		@cars=Car.joins(:model).where("con_avg IS NOT NULL")
+  		if params[:makeID].to_i>0
+  			@cars=@cars.where(models: {make_id: params[:makeID]})
+  		end
+  		if params[:modelID].to_i>0
+  			@cars=@cars.where(model_id: params[:modelID])
+  		end
+  		if params[:fTypeID].to_i>0
+  			@cars=@cars.where(fuel_type_id: params[:fTypeID])
+  		end
+  		if @yFrom.to_i>0
+  			@cars=@cars.where("year>=?", @yFrom)
+  		end
+  		if @yTo.to_i>0
+  			@cars=@cars.where("year<=?", @yTo)
+  		end
+  		if @pFrom.to_i>0
+  			@cars=@cars.where("power>=?", @pFrom)
+  		end
+  		if @pTo.to_i>0
+  			@cars=@cars.where("power<=?", @pTo)
+  		end
+
+
+  		@count=@cars.count
+  		if @count>0
+	  		@conMin=@cars.minimum('con_avg')
+	  		@conAvg=@cars.average('con_avg')
+	  		@conMax=@cars.maximum('con_avg')
+	  	else
+	  		@conMin=@conAvg=@conMax=0
+	  	end
   	end
 
   	def create
