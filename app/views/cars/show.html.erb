@@ -13,7 +13,6 @@
 	<section id="carInfo" class="right">
 		<h2><%= @carHead %></h2>
 		<div class="section-content">
-			<img id="avatar" src="" alt="avatar" />
 			<table id="caravg">
 				<tr>
 					<td>Minimalna poraba</td>
@@ -87,20 +86,26 @@
 
 		<section class="right">
 			<h3>Komentarji</h3>
+			<% if signed_in? %>
 			<div id="comment">
-				<form method = "post" action = "car.html">
-					<textarea></textarea>
+				<%= form_for @newComment do |f| %>
+					<%= f.text_area :value %>
+					<%= f.hidden_field :car_id, value: @carID %>
 					<p class="buttons">
-						<input type = "submit" value = "Oddaj" />
-					</p>
-				</form>
+						<%= f.submit "Oddaj" %>
+					</p>   
+				<% end %>
 			</div>
 			<div class="clear"></div>
+			<% end %>
 			
 			<div id="comments">
-				<p>kamelca: Kako za vraga pa ti voziš, da imaš tako porabo!</p>
+				<% @comments.each do |c| %>
+					<p><%= c.user.email %>: <%= c.value %></p>
+				<% end %>
 			</div>
 		</section>
+		
 	</div>
 	
 	<% if @isOwner %>

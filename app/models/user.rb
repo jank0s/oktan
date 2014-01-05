@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :cars
+  has_many :comments
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token

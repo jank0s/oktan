@@ -11,6 +11,7 @@ Oktan::Application.routes.draw do
   get "cars/timeline"
   resources :cars
   resources :entries
+  resources :comments
 
 
   # The priority is based upon order of creation: first created -> highest priority.

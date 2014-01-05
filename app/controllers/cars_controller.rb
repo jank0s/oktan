@@ -5,6 +5,9 @@ class CarsController < ApplicationController
 		@isOwner=(current_user==@car.user)
 		@carHead=@car.model.make.name+" "+@car.model.name+" ("+@car.year.to_s+")"
 
+		@newComment=Comment.new
+		@comments=@car.comments
+
 		@newEntry=Entry.new
 
 		@entries=@car.entries.order(:odo).reverse_order
