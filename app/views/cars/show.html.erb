@@ -155,17 +155,19 @@
 	<div id="calc" class="hide" >
 		<section class="right">
 			<h3>Kalkulator storškov</h3>
-			<form method = "post" action = "carCalc.html">
+			<form id="calcForm">
 				<p>
 					<label>
 						Vnesite dolžino željene poti: 
-						<input value = "700" /> km
+						<input id="length"> km
+						<input id="conAvg" type="hidden" value="<%= @conAvg %>">
+						<input id="costAvg" type="hidden" value="<%= @costAvg %>">
 					</label>
-					<input type = "submit" value = "Izračunaj" />
+					<button>Izračunaj</button>
 				</p>
 			</form>
 			<div class="clear"></div>
-			<p>Glede na Vašo dosedanjo porabo 16,14 l/100km bodo predvideni stroški goriva 700km dolge poti 207,83€</p>
+			<p id="calcResult"></p>
 		</section>
 	</div>
 </div>

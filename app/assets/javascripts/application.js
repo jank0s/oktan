@@ -133,6 +133,15 @@ $(document).on('ready page:load', function (){
 	$("#datepicker").datepicker();
 	$("#datepicker").datepicker("setDate", new Date());
 
+	$("#calcForm button").click(function(event) {
+		event.preventDefault();
+		var conAvg=$("#conAvg")[0].value
+		var costAvg=$("#costAvg")[0].value
+		var length=1.0*$("#length")[0].value
+		$("#calcResult")[0].innerHTML="Glede na dosedanjo porabo "+toFixed(conAvg, 2)+" l/100km  bodo predvideni stroški goriva "+length+" km dolge poti "+toFixed(costAvg*length/100, 2)+" €."
+
+	});
+
 	//user info related js
 	$("#myListBtn").click(function(){
 		$(".hide").hide();
@@ -150,6 +159,11 @@ $(document).on('ready page:load', function (){
 
 	});
 });
+
+function toFixed(value, precision) {
+    var power = Math.pow(10, precision || 0);
+    return String(Math.round(value * power) / power);
+}
 
 jQuery.fn.extend({
 /**
