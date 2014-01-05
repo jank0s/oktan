@@ -8,6 +8,7 @@ Oktan::Application.routes.draw do
   get "cars/makes"
   get "cars/model"
   get "cars/ftypes"
+  get "cars/timeline"
   resources :cars
   resources :entries
 

@@ -20,6 +20,10 @@ class CarsController < ApplicationController
 			@kmSum=@quantitySum=@priceSum=@conMin=@conAvg=@conMax=@costAvg=0
 		end
 
+		@tEntries=@car.entries.where("km IS NOT NULL").order(:date)
+		@tLabels=@tEntries.pluck(:odo)
+		@tValues=@tEntries.pluck(:con)
+
   	end
 
   	def search

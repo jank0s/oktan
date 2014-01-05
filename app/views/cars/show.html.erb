@@ -13,7 +13,7 @@
 	<section id="carInfo" class="right">
 		<h2><%= @carHead %></h2>
 		<div class="section-content">
-			<img id="avatar" src="images/avatar.jpg" alt="avatar" />
+			<img id="avatar" src="" alt="avatar" />
 			<table id="caravg">
 				<tr>
 					<td>Minimalna poraba</td>
@@ -160,8 +160,6 @@
 					<label>
 						Vnesite dolžino željene poti: 
 						<input id="length"> km
-						<input id="conAvg" type="hidden" value="<%= @conAvg %>">
-						<input id="costAvg" type="hidden" value="<%= @costAvg %>">
 					</label>
 					<button>Izračunaj</button>
 				</p>
@@ -171,3 +169,9 @@
 		</section>
 	</div>
 </div>
+<script>
+	conAvg=<%= @conAvg %>;
+	costAvg=<%= @costAvg %>;
+	tLabels=<%= @tLabels %>;
+	tValues=<%= @tValues %>;
+</script>
