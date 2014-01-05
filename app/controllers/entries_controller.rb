@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
 	def create
 		@entry = Entry.new(entry_params)
 		if @entry.save
-			if @car.enitres.count>1
+			if @car.entries.count>1
 				@car.con_avg=@car.updateAvg
 				@car.save
 			end
