@@ -17,19 +17,19 @@
 			<table id="caravg">
 				<tr>
 					<td>Minimalna poraba</td>
-					<td class="align-right">8,65 l/100km</td>
+					<td class="align-right"><%= '%.2f' % @conMin %> l/100km</td>
 				</tr>
 				<tr>
 					<td>Povprečna poraba</td>
-					<td class="align-right">16,14 l/100km</td>
+					<td class="align-right"><%= '%.2f' % @conAvg %>  l/100km</td>
 				</tr>
 				<tr>
 					<td>Maksimalna poraba</td>
-					<td class="align-right">25,23 l/100km</td>
+					<td class="align-right"><%= '%.2f' % @conMax %>  l/100km</td>
 				</tr>
 				<tr>
 					<td>Strošek goriva</td>
-					<td class="align-right">29,69 €/100km</td>
+					<td class="align-right"><%= '%.2f' % @costAvg %>  €/100km</td>
 				</tr>
 			</table>
 		</div>	
@@ -52,63 +52,33 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="align-left">27.10.2013</td>
-							<td>66801 km</td>
-							<td>284 km</td>
-							<td>58,54 l</td>
-							<td>87,81 €</td>
-							<td class="align-right">20,61 l/100km</td>
-						</tr>
-						<tr>
-							<td class="align-left">24.10.2013</td>
-							<td>66801 km</td>
-							<td>307 km</td>
-							<td>59,22 l</td>
-							<td>88,83 €</td>
-							<td class="align-right">19,29 l/100km</td>
-						</tr>
-						<tr>
-							<td class="align-left">10.10.2013</td>
-							<td>66494 km</td>
-							<td>237 km</td>
-							<td>59,79 l</td>
-							<td>89,69 €</td>
-							<td class="align-right">25,23 l/100km</td>
-						</tr>
-						<tr>
-							<td class="align-left">30.09.2013</td>
-							<td>66257 km</td>
-							<td>450 km</td>
-							<td>38,93 l</td>
-							<td>58,12 €</td>
-							<td class="align-right">8,65 l/100km</td>
-						</tr>
-						<tr>
-							<td class="align-left">16.09.2013</td>
-							<td>65807 km</td>
-							<td>423 km</td>
-							<td>58,14 l</td>
-							<td>86,80 €</td>
-							<td class="align-right">13,74 l/100km</td>
-						</tr>
-						<tr>
-							<td class="align-left">02.09.2013</td>
-							<td>65384 km</td>
-							<td></td>
-							<td>63,00 l</td>
-							<td>94,06 €</td>
-							<td class="align-right">prvi vpis</td>
-						</tr>
+						<% @entries.each do |e| %>
+							<tr>
+								<td class="align-left"><%= e.date %></td>
+								<td><%= e.odo %> km</td>
+								<% if e.km!=nil %>
+									<td><%= e.km %> km</td>
+								<% else %>
+									<td></td>
+								<% end %>
+								<td><%= '%.2f' % e.quantity %> l</td>
+								<td><%= '%.2f' % e.price %> €</td>
+								<% if e.con!=nil %>
+									<td class="align-right"><%= '%.2f' % e.con %> l/100km</td>
+								<% else %>
+									<td class="align-right">prvi vpis</td>
+								<% end %>
+							</tr>
+						<% end %>
 					</tbody>
 					<tfoot>
 					<tr>
 					   <th>Skupaj</th>
 					   <th></th>
-					   <th>1701 km</th>
-					   <th>274,62 l</th>
-					   <th>505,31 €</th>
-					   <th class="align-right">16,14 l/100km</th>
+					   <th><%= @kmSum %>  km</th>
+					   <th><%= '%.2f' % @quantitySum %>  l</th>
+					   <th><%= '%.2f' % @priceSum %> €</th>
+					   <th class="align-right"><%= '%.2f' % @conAvg %> l/100km</th>
 					</tr>
 					</tfoot>
 				</table>

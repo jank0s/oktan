@@ -4,7 +4,22 @@ class CarsController < ApplicationController
 		@carID=@car.id
 		@isOwner=(current_user==@car.user)
 		@carHead=@car.model.make.name+" "+@car.model.name+" ("+@car.year.to_s+")"
+
 		@newEntry=Entry.new
+
+		@entries=@car.entries.order(:odo).reverse_order
+		if @entries.count>1
+			@kmSum=@entries.sum('km')
+			@quantitySum=@entries.sum('quantity')
+			@priceSum=@entries.sum('price')
+			@conMin=@entries.minimum('con')
+			@conAvg=@car.con_avg
+			@conMax=@entries.maximum('con')
+			@costAvg=(@priceSum-@entries.last.price)/@kmSum*100
+		else
+			@kmSum=@quantitySum=@priceSum=@conMin=@conAvg=@conMax=@costAvg=0
+		end
+
   	end
 
   	def search

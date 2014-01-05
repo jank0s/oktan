@@ -7,6 +7,9 @@ class EntriesController < ApplicationController
 			if @car.entries.count>1
 				@car.con_avg=@car.updateAvg
 				@car.save
+				@entry.km=@entry.calcKm
+				@entry.con=@entry.calcCon
+				@entry.save
 			end
   			redirect_to @car
   		else
